@@ -1,0 +1,10 @@
+<div class="center jumbotron">
+  <h1><%= t "title.welcome" %></h1>
+  <h2>
+    <%= t("jumbotron.content1") %>
+    <%= link_to t("title.footer.home1"), "http://www.railstutorial.org/" %>
+    <%= t("jumbotron.content2") %>
+  </h2>
+  <%= link_to t("pages.signup"), "#", class: "btn btn-lg btn-primary" %>
+</div>
+<%= link_to image_tag("rails.png", alt: "Rails logo"), "http://rubyonrails.org/" %>
