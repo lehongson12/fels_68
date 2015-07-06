@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     @user.role = 0
     if @user.save
+      log_in @user
       flash[:success] = I18n.t "signup.signup_success"
       redirect_to @user
     else
