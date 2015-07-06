@@ -13,11 +13,15 @@ en:
     home: "Home"
     signup: "Sign Up"
     login: "Log in"
+    edit_user: "Edit user"
   jumbotron:
     content1: "This is the home page for"
     content2: "sample application."
   edit_user:
     update_success: "Profile updated"
+    save_change: "Save changes"
+    update_user: "Update your profile"
+    avatar_error: "should be less than 5MB"
   signup:
     signup_success: "Welcome to the fesl 68!"
   user:
