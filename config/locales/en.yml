@@ -15,4 +15,10 @@ en:
     login: "Log in"
   jumbotron:
     content1: "This is the home page for"
-    content2: "sample application." 
+    content2: "sample application."
+  edit_user:
+    update_success: "Profile updated"
+  signup:
+    signup_success: "Welcome to the fesl 68!"
+  user:
+    create: "Create my account"
