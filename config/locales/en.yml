@@ -22,3 +22,16 @@ en:
     signup_success: "Welcome to the fesl 68!"
   user:
     create: "Create my account"
+  login:
+    account: "Account"
+    logout: "Log out"
+    user: "Users"
+    new_user: "New User?"
+    profile: "Profile"
+    setting: "Settings"
+    button: "Login"
+    question: "Are you sure?"
+    failed: "Invalid Email/Password combination"
+    require: "Please login"
+    success: "Login success"
+    remember: "Remember me on this computer"
