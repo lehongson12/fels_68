@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+
+  enum role: [:user, :mod, :admin]
+  after_initialize :set_default_role, if: :new_record?
+  
   validates :name,  presence: true, length:  {maximum: 50 }, uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 } ,
@@ -36,7 +40,8 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attributes remember_digest: nil
-  end 
+  end
+
   private
 
     # Validates the size of an uploaded picture.
@@ -44,5 +49,8 @@ class User < ActiveRecord::Base
       if avatar.size > Settings.avatar_size.megabytes
         errors.add :avatar, t("edit_user.avatar_error")
       end
+    end
+    def set_default_role
+      self.role ||= :user
     end
 end
