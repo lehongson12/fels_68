@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
                     uniqueness: {case_sensitive: false	}  
   has_secure_password
   validates :password, length:  {minimum: 6} , allow_blank: true
+  mount_uploader :avatar, AvatarUploader
+  validate  :avatar_size
   
   # Returns the hash digest of the given string.
   def User.digest(string)
@@ -34,5 +36,13 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attributes remember_digest: nil
-  end
+  end 
+  private
+
+    # Validates the size of an uploaded picture.
+    def avatar_size
+      if avatar.size > Settings.avatar_size.megabytes
+        errors.add :avatar, t("edit_user.avatar_error")
+      end
+    end
 end
