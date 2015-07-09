@@ -3,7 +3,7 @@ en:
     website: "Project1"
     signup: "Sign up Now!"
   title:
-    welcome: "Welcome to the Prject1"
+    welcome: "Welcome to the Project1"
     footer:
       home1: "The Ruby on Rails Tutorial" 
       author: "Michael Hartl"

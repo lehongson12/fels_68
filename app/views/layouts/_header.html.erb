@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to t("pages.website"), "#", id: "logo" %>
+    <%= link_to t("pages.website"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to t("title.home"), "#" %></li>
+        <li><%= link_to t("title.home"), root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
@@ -15,7 +15,7 @@
               <li><%= link_to t("login.setting"), '#' %></li>
               <li class="divider"></li>
               <li>
-                <%= link_to t("login.logout"), "#", method: "delete" %>
+                <%= link_to t("login.logout"), logout_path, method: "delete" %>
               </li>
             </ul>
           </li>
