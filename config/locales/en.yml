@@ -19,6 +19,9 @@ en:
   button:
     role: "Change Role"
     delete: "Delete"
+    submit: "Submit"
+    edit: "Edit"
+    word: "Words"
   jumbotron:
     content1: "This is the home page for"
     content2: "sample application."
@@ -47,3 +50,14 @@ en:
     remember: "Remember me on this computer"
   word:
     list: "List words"
+  category:
+    create:
+      new: "Create Category"
+      success: "Created Successfuly"
+    list: "All Category"
+    picture_error: "should be less than 5MB"
+    name: "Name"
+    image: "Image"
+  table:
+    action: "Action"
+

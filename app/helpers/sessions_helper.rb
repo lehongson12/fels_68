@@ -42,4 +42,10 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
   end
+
+  private
+  def authenticate_admin
+    redirect_to root_path unless current_user.try(:admin?)
+  end
+
 end

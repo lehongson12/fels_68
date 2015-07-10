@@ -1,0 +1,21 @@
+<% provide :title, t("category.list") %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <h1 class="text-left"><%= t("category.list") %></h1>
+    <%= link_to t("category.create.new"), new_admin_category_path, class: "btn btn-primary" %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-1">#</th>
+          <th class="col-md-3"><%= t("category.name") %></th>
+          <th class="col-md-4"><%= t("category.image") %></th>
+          <th class="col-md-6"><%= t("table.action") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @categories %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<tr>
+  <td><%= category.id %></td>
+  <td><%= category.name %></td>
+  <td>
+    <% if category.picture? %>
+      <%= image_tag category.picture.url %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to t("button.word"), "#" %> |
+    <%= link_to t("button.edit"), "#" %> |
+    <%= link_to t("button.delete"), "#" %>
+  </td>
+</tr>
