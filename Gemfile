@@ -7,6 +7,7 @@ gem "rails", "4.2.1"
 gem "sqlite3"
 # Use SCSS for stylesheets
 gem "bootstrap-sass"
+gem "will_paginate"
 gem "sass-rails", "~> 5.0"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier", ">= 1.3.0"
@@ -14,7 +15,6 @@ gem "uglifier", ">= 1.3.0"
 gem "coffee-rails", "~> 4.1.0"
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem "therubyracer", platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem "jquery-rails"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -29,6 +29,8 @@ gem "carrierwave",             "0.10.0"
 gem "mini_magick",             "3.8.0"
 gem "fog",                     "1.23.0"
 gem "rails_config"
+gem "faker"
+
 # Use Unicorn as the app server
 # gem "unicorn"
 

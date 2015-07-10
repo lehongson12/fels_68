@@ -4,6 +4,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def show
+    @user = User.find params[:id]  
+  end
+
+  def index
+    @users = User.paginate page: params[:page], per_page: 10
+  end
+
   def create
     @user = User.new user_params
     @user.role = 0
@@ -26,7 +34,7 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit :name, :email, :password,
-                                   :password_confirmation,:avatar
+                                   :password_confirmation,:avatar, :role
   end
   def set_user
     @user = User.find params[:id]
