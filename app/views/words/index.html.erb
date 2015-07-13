@@ -1,0 +1,14 @@
+<h1><%= t "admin.user.word_list" %></h1>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t "title.content" %></th>
+      <th><%= t "title.category" %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%= render @words %>    
+  </tbody>
+</table>
+<%= will_paginate %>
