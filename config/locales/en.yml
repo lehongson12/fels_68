@@ -60,6 +60,11 @@ en:
       new: "Create Category"
       success: "Created Successfuly"
     list: "All Category"
+    update:
+      success: "Category updated Successfuly"
+    edit: "Edit Category"
+    delete: "Delete Successfuly"
+    delete_error: "Do not delete"
     picture_error: "should be less than 5MB"
     name: "Name"
     image: "Image"
