@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+
   def new
     @user = User.new
   end
@@ -9,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.paginate page: params[:page], per_page: 10
+    @users = User.paginate page: params[:page], per_page: Settings.length.page
   end
 
   def create
@@ -17,27 +18,29 @@ class UsersController < ApplicationController
     @user.role = 0
     if @user.save
       log_in @user
-      flash[:success] = I18n.t "signup.signup_success"
+      flash[:success] = t"signup.signup_success"
       redirect_to @user
     else
-      render "new"
+      render :new
     end
   end
+  
   def update
     if @user.update_attributes user_params
-      flash[:success] = I18n.t "edit_user.update_success"
+      flash[:success] = t"edit_user.update_success"
       redirect_to @user
     else
-      render "edit"
+      render :edit
     end
   end
+
   private
   def user_params
-    params.require(:user).permit :name, :email, :password,
-                                   :password_confirmation,:avatar, :role
+    params.require(:user).permit :name, :email, :password, 
+                          :password_confirmation, :avatar, :role
   end
+
   def set_user
     @user = User.find params[:id]
   end
 end
-

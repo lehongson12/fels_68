@@ -1,0 +1,24 @@
+<% provide :title, t("word.list") %>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-left"><%= @category.name %></h1>
+    <%= link_to t("word.create.new"), new_admin_category_word_path, class: "btn btn-primary" %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-1">#</th>
+          <th class="col-md-3"><%= t("word.words") %></th>
+          <th class="col-md-2"><%= t("answer") %><%= t("number.1") %></th>
+          <th class="col-md-2"><%= t("answer") %><%= t("number.2") %></th>
+          <th class="col-md-2"><%= t("answer") %><%= t("number.3") %></th>
+          <th class="col-md-2"><%= t("answer") %><%= t("number.4") %></th>
+          <th class="col-md-1"><%= t("table.action") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @words %>
+      </tbody>
+    </table>
+    <%= will_paginate %>
+  </div>
+</div>

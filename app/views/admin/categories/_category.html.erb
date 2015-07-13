@@ -7,8 +7,9 @@
     <% end %>
   </td>
   <td>
-    <%= link_to t("button.word"), "#" %> |
-    <%= link_to t("button.edit"), "#" %> |
-    <%= link_to t("button.delete"), "#" %>
+    <%= link_to t("button.word"), admin_category_words_path(category) %> |
+    <%= link_to t("button.edit"), edit_admin_category_path(category) %> |
+    <%= link_to t("button.delete"), admin_category_path(category), 
+            method: :delete, data: {confirm: t("alert")} %>
   </td>
 </tr>
