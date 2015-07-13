@@ -46,6 +46,8 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -66,6 +68,8 @@ GEM
     erubis (2.7.0)
     excon (0.45.3)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     fog (1.23.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -193,6 +197,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootstrap-sass
+  bootstrap-will_paginate
   byebug
   carrierwave (= 0.10.0)
   coffee-rails (~> 4.1.0)

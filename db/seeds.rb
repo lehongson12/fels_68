@@ -18,11 +18,24 @@ User.create!(name:  "Demo User",
 
 99.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = "mail-#{n+1}@railstutorial.org"
   password = "password"
   User.create!(name:  name,
                email: email,
                password:              password,
                password_confirmation: password,
                role: 0)
+end
+
+10.times do
+  name = Faker::Lorem.words(2).join(' ')
+  Category.create!(name: name)
+end
+
+categories = Category.all
+categories.each do |category|
+  20.times do
+    content = Faker::Lorem.word
+    category.words.create!(content: content)
+  end
 end

@@ -14,6 +14,8 @@ en:
     signup: "Sign Up"
     login: "Log in"
     edit_user: "Edit user"
+    content: "Content"
+    category: "Category"
   button:
     role: "Change Role"
     delete: "Delete"
@@ -43,3 +45,5 @@ en:
     require: "Please login"
     success: "Login success"
     remember: "Remember me on this computer"
+  word:
+    list: "List words"
