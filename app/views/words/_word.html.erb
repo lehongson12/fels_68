@@ -1,4 +1,5 @@
 <tr>
+  <td><%= word.id %></td>
   <td><%= word.content %></td>
-  <td><%= word.category.name %></td>
+  <td><%= Answer.find_by(word_id: word.id, is_correct: true).content %></td>
 </tr>

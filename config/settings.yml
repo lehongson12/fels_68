@@ -2,4 +2,9 @@ size: 50
 avatar_size: 5
 picture_size: 5
 length:
-  page: 10
+  page: 8
+setting:
+  all: "get_all"
+  learned: "learned"
+  not_learned: "not_learned"
+  content: "{content}"

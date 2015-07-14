@@ -1,14 +1,20 @@
-<h1><%= t "admin.user.word_list" %></h1>
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th><%= t "title.content" %></th>
-      <th><%= t "title.category" %></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @words %>    
-  </tbody>
-</table>
+<div class="row">
+  <div class="col-md-8 col-md-offset-1">
+    <%= render "shared/search" %>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th class="col-md-2"><%= t "title.id" %></th>
+          <th class="col-md-3"><%= t "title.content" %></th>
+          <th class="col-md-3"><%= t "title.answer" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @words %>    
+      </tbody>
+    </table>
+  </div>
+</div>
 <%= will_paginate %>
+
+
