@@ -1,0 +1,11 @@
+<div class="nested-fields">
+  <div class="col-md-8">
+    <%= f.text_field :content, class: "form-control" %>
+  </div>
+  <div class="col-md-1">
+    <%= f.check_box :is_correct, class: "answered" %>
+  </div>
+  <div class="col-md-3">
+    <%= link_to_remove_association t("button.remove"), f, class: "form-button btn btn-default" %>
+  </div>
+</div>

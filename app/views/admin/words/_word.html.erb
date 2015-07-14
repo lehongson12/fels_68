@@ -1,0 +1,18 @@
+<tr>
+  <td class="col-md-1"><%= word.id %></td>
+  <td class="col-md-1"><%= word.content %></td>
+  <% word.answers.each do |answer| %>
+    <td class="col-md-2">
+      <% if answer.is_correct %>
+        <i class="glyphicon glyphicon-ok"></i>
+      <% elsif %>
+        <i class="glyphicon glyphicon-remove"></i>
+      <% end %>
+      <%= answer.content %>
+    </td>
+  <% end %>
+  <td class="col-md-1">
+    <%= link_to t("button.delete"), "#" %>
+    <%= link_to t("button.edit"), "#" %>
+  </td>
+</tr>

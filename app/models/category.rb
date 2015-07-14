@@ -2,6 +2,8 @@ class Category < ActiveRecord::Base
 
   has_many :words, dependent: :destroy
 
+  accepts_nested_attributes_for :words, allow_destroy: true,
+                            reject_if: proc { |a| a[:content].blank? }
   validates :name, presence: true, length: {maximum: 50}, uniqueness: true
   mount_uploader :picture, AvatarUploader
 
