@@ -1,5 +1,11 @@
 <li>
-  <%= link_to user.name, user %>
+  <% if user.avatar? %>
+    <%= image_tag user.avatar.url %>
+  <% else  %>
+    <%=  gravatar_for user %>
+  <% end %>
+  <%= link_to user.name,user%>
+  <span>| <%=  user.email %></span>
   <% if current_user.try :admin? %>
     <%= form_for user do |f| %>
       <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})%>

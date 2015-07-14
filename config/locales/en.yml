@@ -20,6 +20,8 @@ en:
     id: "ID"
     toggle: "Toggle navigation"
     category: "Category"
+    Following: "Following"
+    Followers: "Followers"
   button:
     role: "Change Role"
     delete: "Delete"
@@ -42,6 +44,7 @@ en:
   user:
     create: "Create my account"
     all: "All Users"
+    view my profile: "view my profile"
   login:
     account: "Account"
     logout: "Log out"
@@ -85,3 +88,7 @@ en:
     2: "2"
     3: "3"
     4: "4"
+  follow: "Follow"
+  unfollow: "Unfollow"
+  followers: "followers"
+  following: "following"
