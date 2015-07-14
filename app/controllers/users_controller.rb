@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find params[:id]  
+    @activities = @user.activities.recent.paginate page: params[:page]
   end
 
   def index
@@ -39,6 +39,8 @@ class UsersController < ApplicationController
     end
   end
 
+  
+
   private
   def user_params
     params.require(:user).permit :name, :email, :password, 
@@ -56,5 +58,4 @@ class UsersController < ApplicationController
       redirect_to login_url
     end
   end
-
 end
