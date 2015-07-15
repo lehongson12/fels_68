@@ -39,3 +39,13 @@ categories.each do |category|
     category.words.create!(content: content)
   end
 end
+
+words = Word.all
+words.each do |word|
+  content = Faker::Lorem.words(2).join(' ')
+  word.answers.create!(content: content, is_correct: true)
+  3.times do
+    content = Faker::Lorem.words(2).join(' ')
+    word.answers.create!(content: content, is_correct: false)
+  end
+end

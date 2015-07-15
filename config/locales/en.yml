@@ -16,12 +16,17 @@ en:
     edit_user: "Edit user"
     content: "Content"
     category: "Category"
+    answer: "Answer"
+    id: "ID"
+    toggle: "Toggle navigation"
+    category: "Category"
   button:
     role: "Change Role"
     delete: "Delete"
     submit: "Submit"
     edit: "Edit"
     word: "Words"
+    search: "Search"
     remove: "Remove"
     add_answer: "Add Answer"
   jumbotron:
@@ -51,6 +56,7 @@ en:
     success: "Login success"
     remember: "Remember me on this computer"
   word:
+    list: "Word list"
     create:
       new: "Create Words"
     words: "Words"
@@ -79,4 +85,3 @@ en:
     2: "2"
     3: "3"
     4: "4"
-
