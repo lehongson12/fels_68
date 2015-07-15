@@ -31,7 +31,7 @@ gem "mini_magick",             "3.8.0"
 gem "fog",                     "1.23.0"
 gem "rails_config"
 gem "faker"
-
+gem "therubyracer"
 # Use Unicorn as the app server
 # gem "unicorn"
 
