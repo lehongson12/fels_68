@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
   enum role: [:user, :mod, :admin]
   after_initialize :set_default_role, if: :new_record?
+  
   attr_accessor :remember_token
+
+  has_many :activities, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -22,7 +25,7 @@ class User < ActiveRecord::Base
   validate  :avatar_size
   
   # Returns the hash digest of the given string.
-  def User.digest(string)
+  def User.digest string
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
@@ -40,7 +43,7 @@ class User < ActiveRecord::Base
   end
 
   # Returns true if the given token matches the digest.
-  def authenticated?(remember_token)
+  def authenticated? remember_token
     BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
@@ -52,7 +55,6 @@ class User < ActiveRecord::Base
   def follow other_user
     active_relationships.create followed_id: other_user.id
   end
-
   # Unfollows a user.
   
   def unfollow other_user

@@ -1,14 +1,14 @@
 <li>
   <% if user.avatar? %>
-    <%= image_tag user.avatar.url %>
+    <%= image_tag user.avatar.url, size: Settings.avatar.list_user_avatar_size %>
   <% else  %>
     <%=  gravatar_for user %>
   <% end %>
-  <%= link_to user.name,user%>
+  <%= link_to user.name, user%>
   <span>| <%=  user.email %></span>
   <% if current_user.try :admin? %>
     <%= form_for user do |f| %>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})%>
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize, role]})%>
       <%= f.submit t("button.role"), :class => "btn btn-xs btn-primary", style: "width: 50%" %>
     <% end %>
   <%= link_to t("button.delete"), user, method: :delete, 

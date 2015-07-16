@@ -8,3 +8,8 @@ setting:
   learned: "learned"
   not_learned: "not_learned"
   content: "{content}"
+activities:
+  followed: followed
+  unfollowed: unfollowed
+avatar:
+  list_user_avatar_size: "50x50"

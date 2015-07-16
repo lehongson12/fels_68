@@ -9,4 +9,12 @@
       <%= render "follow_form" if logged_in? %>
     </section>
   </aside>
+  <div class="col-md-8">
+  <% if @user.activities.any? %>
+  <h3 align="center"><%= t :activities %></h3>
+  <div class="activities">
+  <%= render @activities if @user.activities.any? %>
+   </div>
+   <% end %>
+   </div>
 </div>
