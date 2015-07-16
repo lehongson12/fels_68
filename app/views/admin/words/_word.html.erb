@@ -12,7 +12,7 @@
     </td>
   <% end %>
   <td class="col-md-1">
-    <%= link_to t("button.delete"), "#" %>
-    <%= link_to t("button.edit"), "#" %>
+    <%= link_to t("button.delete"), admin_category_word_path(@category, word), method: :delete, date: {confirm: t("alert")} %>
+    <%= link_to t("button.edit"), edit_admin_category_word_path(@category, word) %>
   </td>
 </tr>
