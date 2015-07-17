@@ -64,6 +64,12 @@ en:
       new: "Create Words"
     words: "Words"
     list: "List words"
+    update:
+      success: "Word Updated Successfuly"
+      error: "Could not updated"
+    delete:
+      success: "Delete Word Successfuly"
+      error: "Do not delete"
   category:
     create:
       new: "Create Category"

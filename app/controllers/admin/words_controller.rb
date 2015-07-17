@@ -22,15 +22,29 @@ class Admin::WordsController < ApplicationController
   end	
 
   def edit
-    
+    @word = Word.find params[:id]
   end
 
   def update
-    
+    @word = Word.find params[:id]
+    if @word.update_attributes words_params
+      flash[:success] = t "word.update.success"
+      redirect_to [:admin, :category, :words]
+    else
+      flash[:danger] = t "word.update.error"
+      render :edit
+    end
   end
 
   def destroy
-    
+    @word = Word.find params[:id]
+    if @word.destroy
+      flash[:success] = t "word.delete.success"
+      redirect_to [:admin, :category, :words]
+    else
+      flash[:danger] = t "word.delete.error"
+      redirect_to [:admin, :category, :words]
+    end
   end
 
   private
