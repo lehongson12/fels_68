@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships,       only: [:create, :destroy, :index]
+  resources :categories, only: [:index, :show]
   get "/users/:id/:type" => "relationships#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

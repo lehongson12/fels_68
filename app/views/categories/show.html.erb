@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-md-8 category">
+    <div class="list-group">
+      <div class="list-group-item list-group-item-success">
+        <h3 class="list-group-item-heading">
+          <%= @category.name %>
+          <%= link_to t("start"),"#", class: "btn btn-primary start-button pull-right" %>
+        </h3>
+        </h3>
+        <br>
+        <ul class="list-group">
+          <% @category.words.each do |word| %>
+            <li class="list-group-item"> 
+              <%= word.content%>
+            </li>
+          <% end %>
+          <%= will_paginate @words %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 category">
+    <div class="list-group">
+      <div class="list-group-item list-group-item-info">
+        <h3 class="list-group-item-heading">
+          <%= t "lesson_result_for" %><%= @category.name %>
+        </h3>
+        <p class="list-group-item-text">
+          <ul class="list-group">
+            <li class="list-group-item">     
+            </li>
+          </ul>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
