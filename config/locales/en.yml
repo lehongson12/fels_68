@@ -83,6 +83,7 @@ en:
     picture_error: "should be less than 5MB"
     name: "Name"
     image: "Image"
+    category: "Categories"
   answer: "Answer"
   table:
     action: "Action"
@@ -98,3 +99,4 @@ en:
   unfollow: "Unfollow"
   followers: "followers"
   following: "following"
+  
