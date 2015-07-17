@@ -1,0 +1,11 @@
+<%= form_for [@lesson.category, @lesson] do |f| %>
+  <h1><%= @lesson.category.name %></h1>
+  <h2>
+    <span></span>
+    <span><%= @lesson.results.count %></span>
+  </h2>
+  <%= f.fields_for :results do |builder| %>
+    <%= render "field_for", f: builder %>
+  <% end %>
+  <%= f.submit :submit, class: "btn btn-primary" %>
+<% end %>

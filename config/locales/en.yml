@@ -61,9 +61,11 @@ en:
   word:
     list: "Word list"
     create:
+      success: "Created Words Successfuly"
       new: "Create Words"
     words: "Words"
     list: "List words"
+    mean: "Mean"
     update:
       success: "Word Updated Successfuly"
       error: "Could not updated"
@@ -85,6 +87,15 @@ en:
     image: "Image"
     category: "Categories"
   answer: "Answer"
+  lesson:
+    lesson: "Lesson"
+    create:
+      success: "Created Lesson Successfuly"
+      fail: "Create Lesson failed"
+    update:
+      success: "Submit answer Lesson Successfuly"
+      fail: "Update Lesson failed"
+    result: "Result"
   table:
     action: "Action"
   errors:
@@ -99,4 +110,4 @@ en:
   unfollow: "Unfollow"
   followers: "followers"
   following: "following"
-  
+  admin: "Admin Panel"

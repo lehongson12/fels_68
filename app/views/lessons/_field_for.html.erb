@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="coll-md-6 col-offset-md-6">
+    <p class="alert alert-info"><%= f.object.word.content %></p>
+  </div>
+  </br>
+  <div class="col-lmd-3">
+    <% f.object.word.answers.each do |answer| %>
+      <label class="alert alert-warning" role="alert">
+        <%= f.radio_button :answer_id, answer.id %>
+        <%= answer.content %>
+      </label>
+    <% end %>
+  </div>
+</div>

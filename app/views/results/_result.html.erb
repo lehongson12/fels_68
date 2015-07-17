@@ -1,0 +1,13 @@
+<tr class="row">
+  <td class="col-md-2">
+    <% if result.answer.try(:is_correct?) %>
+      <i class="glyphicon glyphicon-ok"></i>
+    <% else %>
+      <i class="glyphicon glyphicon-remove"></i>
+    <% end %>
+  </td>
+  <td class="col-md-5"><%= result.word.content %></td>
+  <td class="col-md-5">
+    <%= result.answer.try(:content) %>      
+  </td>
+</tr>
