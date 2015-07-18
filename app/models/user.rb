@@ -62,6 +62,10 @@ class User < ActiveRecord::Base
   end
 
   # Returns true if the current user is following the other user.
+  def feed
+    Activity.followed self
+  end
+
 
   def following? other_user
     following.include? other_user
