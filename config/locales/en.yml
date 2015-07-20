@@ -87,8 +87,10 @@ en:
     image: "Image"
     category: "Categories"
   answer: "Answer"
-  lesson:
+  lesson: 
     lesson: "Lesson"
+    all_learned_lesson: "All learned lesson"
+    lesson_x: "Lesson %{x}"
     create:
       success: "Created Lesson Successfuly"
       fail: "Create Lesson failed"

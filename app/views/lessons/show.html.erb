@@ -1,0 +1,23 @@
+<% provide :title, t("lesson.lesson") %>
+<h1 align="center"><%= t "lesson.lesson" %></h1>
+<h3 align="center"><%= @category.name %></h3>
+<h3 class="text-center"><%= @mark %></h3>
+<h3 class="pull-right text-danger">
+  <span class="glyphicon glyphicon-time">&nbsp</span>
+  <b id="time-remaining"></b>
+</h3>
+<div class="container">
+  <div class="row" id="lesson">
+    <%= form_for [@category, @lesson] do |f| %>
+      <%= f.fields_for :results do |builder| %>
+        <div class="col-md-10">
+          <%= render "field_for", f: builder %>
+        </div>
+      <% end %>
+      <div class="col-md-4 col-md-offset-4">
+        <br>
+        <%= f.submit :submit, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

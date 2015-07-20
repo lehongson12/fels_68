@@ -11,8 +11,11 @@ setting:
 activities:
   followed: followed
   unfollowed: unfollowed
+  learned: learned
 avatar:
   list_user_avatar_size: "50x50"
   home_user_avatar_size: "200x200"
 lesson:
   limit_words: 20
+minimum_password: 6
+maximum_email: 255

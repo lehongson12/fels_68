@@ -1,7 +1,8 @@
 class LessonsController < ApplicationController
-  before_action :init_lesson, only: [:edit, :update]
-  before_action :set_category
-
+  before_action :init_lesson, only: [:edit,:show, :update]
+  before_action :init_category, only: [:create,:show, :update]
+  before_action :logged_in_user
+  
   def create
     @lesson = Lesson.new category_id: @category.id, user_id: current_user.id
     if @lesson.save
@@ -11,6 +12,9 @@ class LessonsController < ApplicationController
       flash[:danger] = t "lesson.create.fail"
       redirect_to categories_path
     end
+  end
+  
+  def show
   end
 
   def edit
@@ -31,7 +35,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.find params[:id]
   end
 
-  def set_category
+  def init_category
     @category = Category.find params[:category_id]
   end
 

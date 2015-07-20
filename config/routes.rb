@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show] do
     resources :lessons
   end
-  resources :lessons, only: :create do
+  resources :lessons, only: [:create, :show, :index] do
     resources :results
   end
   get "/users/:id/:type" => "relationships#index"
