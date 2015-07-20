@@ -15,7 +15,12 @@ Rails.application.routes.draw do
     end
   end
   resources :relationships,       only: [:create, :destroy, :index]
-  resources :categories, only: [:index, :show]
+  resources :categories, only: [:index, :show] do
+    resources :lessons
+  end
+  resources :lessons, only: :create do
+    resources :results
+  end
   get "/users/:id/:type" => "relationships#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

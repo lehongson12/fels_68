@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <div class="">
+        <h1><%= @lesson.category.name.titleize %> | <%= t "lesson.result" %></h1>
+        <h2><%= @lesson.correct_number %>/<%= @lesson.results.count %></h2>
+      </div>
+      <div class="row">
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <td class="col-md-2"><strong><%= t "lesson.result" %></strong></td>
+              <td class="col-md-5"><strong><%= t "word.words" %></strong></td>
+              <td class="col-md-5"><strong><%= t "word.mean" %></strong></td>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @lesson.results %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

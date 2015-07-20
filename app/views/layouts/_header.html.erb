@@ -14,6 +14,9 @@
       <ul class="nav navbar-nav">
         <li><%= link_to t("word.list"), words_path %></li>
         <li><%= link_to t("category.categories"), categories_path %></li>
+        <% if logged_in? && current_user.admin?  %>
+          <li><%= link_to t("admin"), admin_categories_path %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to t("title.home"), root_path %></li>
