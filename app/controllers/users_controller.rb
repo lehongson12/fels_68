@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :init_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -47,8 +47,8 @@ class UsersController < ApplicationController
                           :password_confirmation, :avatar, :role
   end
 
-  def set_user
-    @user = User.find params[:id]
+  def init_user
+    @user = User.friendly.find params[:id]
   end
   
 end

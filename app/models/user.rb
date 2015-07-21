@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, if: :new_record?
   
   attr_accessor :remember_token
+  
+  has_many :lessons, dependent: :destroy
 
   has_many :activities, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
@@ -16,13 +18,17 @@ class User < ActiveRecord::Base
   
   validates :name,  presence: true, length:  {maximum: 50 }, uniqueness: true
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 255 } ,
+  validates :email, presence: true, length: { maximum: Settings.maximum_email } ,
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: {case_sensitive: false	}  
   has_secure_password
-  validates :password, length:  {minimum: 6} , allow_blank: true
+  validates :password, length:  {minimum: Settings.minimum_password} , allow_blank: true
   mount_uploader :avatar, AvatarUploader
   validate  :avatar_size
+
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged  
   
   # Returns the hash digest of the given string.
   def User.digest string

@@ -7,7 +7,12 @@
     <% end %>
     <span class="text-info"><%= current_user.name %></span>
     <%= activity.type_action %>
-    <%= link_to activity.target.name, activity.target %>
+    <% if activity.type_action == Settings.activities.learned %>
+      <%= link_to activity.target.category.name,
+        category_lesson_path(category_id: activity.target.category.id, id: activity.target.id) %>
+    <% else %>
+      <%= link_to activity.target.name, activity.target %>
+    <% end %>
   </h4>
   <small style="color:gray">
     <% if  Time.zone.now - activity.created_at < 1.day %>
