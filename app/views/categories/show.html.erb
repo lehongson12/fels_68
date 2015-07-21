@@ -4,7 +4,7 @@
       <div class="list-group-item list-group-item-success">
         <h3 class="list-group-item-heading">
           <%= @category.name %>
-          <%= link_to t("start"),category_lessons_path(category_id: @category.id), method: :post, class: "btn btn-primary start-button pull-right" %>
+          <%= link_to t("start"),category_lessons_path(@category), method: :post, class: "btn btn-primary start-button pull-right" %>
         </h3>
         </h3>
         <br>
@@ -30,7 +30,8 @@
             <li class="list-group-item">
               <% @category.lessons.each do |lesson| %>
                 <%= link_to t("lesson.lesson_x", x: lesson.id),
-                  category_lesson_path(category_id: @category.id, id: lesson.id) %>
+                  category_lesson_path(lesson.category, lesson) %>
+                <p align="right"><%= lesson.correct_number %>/<%= lesson.results.count %></p>
                 <hr>
               <% end %>
             </li>

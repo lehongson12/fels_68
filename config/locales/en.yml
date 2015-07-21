@@ -3,7 +3,7 @@ en:
     website: "Project1"
     signup: "Sign up Now!"
   title:
-    welcome: "Welcome to the Project1"
+    welcome: "Welcome to the Framgia E-Learning"
     footer:
       home1: "The Ruby on Rails Tutorial" 
       author: "Michael Hartl"
@@ -39,6 +39,9 @@ en:
     save_change: "Save changes"
     update_user: "Update your profile"
     avatar_error: "should be less than 5MB"
+  destroy_user:
+    success: "Deleted User Successfuly"
+    error: "Could not Delete User"
   signup:
     signup_success: "Welcome to the fesl 68!"
   user:

@@ -6,8 +6,9 @@
       <i class="glyphicon glyphicon-remove"></i>
     <% end %>
   </td>
-  <td class="col-md-5"><%= result.word.content %></td>
-  <td class="col-md-5">
-    <%= result.answer.try(:content) %>      
+  <td class="col-md-4"><%= result.word.content %></td>
+  <td class="col-md-2"><%= result.answer.try :content %></td>
+  <td class="col-md-4">
+    <%= result.word.answers.find_by(is_correct: true).content %>
   </td>
 </tr>

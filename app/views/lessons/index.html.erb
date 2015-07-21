@@ -9,7 +9,8 @@
           <li class="list-group-item">
             <% @current_user.lessons.each do |lesson| %>
               <%= link_to t("lesson.lesson_x", x: lesson.id),
-                category_lesson_path(category_id: lesson.category.id, id: lesson.id) %>
+                category_lesson_path(lesson.category, lesson) %> | <strong><%= link_to lesson.category.name, lesson.category %></strong>
+              <p align="right"><%= lesson.correct_number %>/<%= lesson.results.count %></p>
               <hr>
             <% end %>
           </li>

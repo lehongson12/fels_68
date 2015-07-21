@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :init_user, only: [:show, :edit, :update]
+  before_action :init_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -39,7 +39,14 @@ class UsersController < ApplicationController
     end
   end
 
-  
+  def destroy
+    if @user.destroy
+      flash[:success] = t "destroy_user.success"
+    else
+      flash[:danger] = t "destroy_user.error"
+    end
+    redirect_to users_path
+  end
 
   private
   def user_params

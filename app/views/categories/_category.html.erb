@@ -5,7 +5,10 @@
         <h3 class="list-group-item-heading">
           <%= category.name %>
         </h3>
-        <p class="list-group-item-text" >
+        <p align="right" >
+          <% if category.picture? %>
+            <%= image_tag category.picture.url %>
+          <% end %>
         </p>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <% provide :title, t("lesson.lesson") %>
-<h1 align="center"><%= t "lesson.lesson" %></h1>
+<h1 align="center"><%= t "lesson.lesson_x", x: @lesson.id %></h1>
 <h3 align="center"><%= @category.name %></h3>
 <h3 class="text-center"><%= @mark %></h3>
 <h3 class="pull-right text-danger">
